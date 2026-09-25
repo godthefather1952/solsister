@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#080b12">
-<title>Solana 15-Minute Model</title>
+<title>Dogecoin 15-Minute Model</title>
 <style>
 :root{
   color-scheme:dark;
@@ -14,8 +14,8 @@
   --line:#202a3a;
   --text:#f4f7fb;
   --muted:#8d9aab;
-  --accent:#9b7bff;
-  --accent2:#35d7ba;
+  --accent:#d8ad36;
+  --accent2:#f0d36e;
   --up:#38d996;
   --down:#ff6685;
   --warn:#f4c35d;
@@ -23,22 +23,22 @@
 }
 *{box-sizing:border-box}
 html,body{margin:0;min-height:100%;background:
-  radial-gradient(circle at 88% -5%,rgba(128,86,255,.18),transparent 34%),
-  radial-gradient(circle at -10% 20%,rgba(48,218,183,.10),transparent 32%),
+  radial-gradient(circle at 88% -5%,rgba(216,173,54,.18),transparent 34%),
+  radial-gradient(circle at -10% 20%,rgba(240,211,110,.10),transparent 32%),
   var(--bg);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",Inter,Segoe UI,sans-serif;color:var(--text)}
 body{padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
 button{font:inherit}
 .app{width:min(100%,720px);margin:0 auto;padding:18px 14px 40px}
 .brand{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:4px 2px 16px}
 .brand-left{display:flex;align-items:center;gap:11px}
-.logo{width:40px;height:40px;border-radius:13px;background:linear-gradient(135deg,#9b7bff,#35d7ba);display:grid;place-items:center;box-shadow:0 10px 28px rgba(102,86,255,.25);font-weight:900;color:#071019}
+.logo{width:40px;height:40px;border-radius:13px;background:linear-gradient(135deg,#d8ad36,#f0d36e);display:grid;place-items:center;box-shadow:0 10px 28px rgba(216,173,54,.25);font-weight:900;color:#071019}
 .eyebrow{color:var(--muted);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
 h1{font-size:20px;line-height:1.15;margin:3px 0 0;letter-spacing:-.02em}
 .live-dot{display:inline-flex;align-items:center;gap:7px;color:var(--muted);font-size:12px;white-space:nowrap}
 .live-dot:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--up);box-shadow:0 0 0 4px rgba(56,217,150,.10)}
 .card{background:linear-gradient(180deg,rgba(17,24,39,.96),rgba(12,17,26,.96));border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow)}
 .hero{padding:22px 18px 18px;overflow:hidden;position:relative}
-.hero:after{content:"";position:absolute;width:210px;height:210px;right:-85px;top:-95px;border-radius:50%;background:radial-gradient(circle,rgba(155,123,255,.19),transparent 68%);pointer-events:none}
+.hero:after{content:"";position:absolute;width:210px;height:210px;right:-85px;top:-95px;border-radius:50%;background:radial-gradient(circle,rgba(216,173,54,.19),transparent 68%);pointer-events:none}
 .label{font-size:12px;color:var(--muted);font-weight:650;letter-spacing:.01em}
 .predicted-price{font-size:48px;line-height:1.02;letter-spacing:-.055em;font-weight:800;margin:7px 0 9px;font-variant-numeric:tabular-nums}
 .direction-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
@@ -91,10 +91,10 @@ h1{font-size:20px;line-height:1.15;margin:3px 0 0;letter-spacing:-.02em}
 <main class="app">
   <div class="brand">
     <div class="brand-left">
-      <div class="logo">S</div>
+      <div class="logo">Ð</div>
       <div>
-        <div class="eyebrow">SOL · Coinbase Exchange</div>
-        <h1>Solana 15-Minute Model</h1>
+        <div class="eyebrow">DOGE · Coinbase Exchange</div>
+        <h1>Dogecoin 15-Minute Model</h1>
       </div>
     </div>
     <div class="live-dot">Live</div>
@@ -114,7 +114,7 @@ h1{font-size:20px;line-height:1.15;margin:3px 0 0;letter-spacing:-.02em}
         <div class="stat-value" id="lockedPrice">—</div>
       </div>
       <div class="stat">
-        <div class="label">Live SOL/USD</div>
+        <div class="label">Live DOGE/USD</div>
         <div class="stat-value" id="livePrice">—</div>
       </div>
       <div class="stat">
@@ -136,7 +136,7 @@ h1{font-size:20px;line-height:1.15;margin:3px 0 0;letter-spacing:-.02em}
     </div>
 
     <div class="status" id="statusBox">
-      <strong id="statusTitle">Starting SOL model…</strong>
+      <strong id="statusTitle">Starting DOGE model…</strong>
       <div id="statusText">Checking local calibration and Coinbase market data.</div>
       <div class="progress" id="progress"><i id="progressBar"></i></div>
     </div>
@@ -157,7 +157,7 @@ h1{font-size:20px;line-height:1.15;margin:3px 0 0;letter-spacing:-.02em}
       <div class="metric wide"><div class="label">Calibration date range</div><div class="v" id="mTrainRange">—</div></div>
       <div class="metric wide"><div class="label">Verification date range</div><div class="v" id="mVerifyRange">—</div></div>
     </div>
-    <p class="explain">The model is calibrated on older SOL/USD history and verified on the most recent 30% of the historical sample. Forecasts are statistical estimates derived from historical SOL/USD behavior, not guarantees.</p>
+    <p class="explain">The model is calibrated on older DOGE/USD history and verified on the most recent 30% of the historical sample. Forecasts are statistical estimates derived from historical DOGE/USD behavior, not guarantees. DOGE prices are shown to five decimal places so small quarter-hour moves remain visible.</p>
   </section>
 
   <section class="card section">
@@ -173,17 +173,17 @@ h1{font-size:20px;line-height:1.15;margin:3px 0 0;letter-spacing:-.02em}
   "use strict";
 
   const API = "https://api.exchange.coinbase.com";
-  const PRODUCT = "SOL-USD";
+  const PRODUCT = "DOGE-USD";
   const GRANULARITY = 900;
   const INTERVAL_MS = GRANULARITY * 1000;
   const HISTORY_DAYS = 90;
   const CACHE_MS = 6 * 60 * 60 * 1000;
   const CHUNK_CANDLES = 299;
   const MIN_NEARBY = 30;
-  const HISTORY_KEY = "sol_history_v1";
-  const PREDICTIONS_KEY = "sol_predictions_v1";
-  const MODEL_KEY = "sol_model_v1";
-  const CALIBRATION_KEY = "sol_calibration_v1";
+  const HISTORY_KEY = "doge_history_v1";
+  const PREDICTIONS_KEY = "doge_predictions_v1";
+  const MODEL_KEY = "doge_model_v1";
+  const CALIBRATION_KEY = "doge_calibration_v1";
 
   const SETTINGS = Object.freeze({
     rsiPeriod: 14,
@@ -276,7 +276,7 @@ h1{font-size:20px;line-height:1.15;margin:3px 0 0;letter-spacing:-.02em}
   }
 
   function fmtPrice(v) {
-    return Number.isFinite(v) ? "$" + v.toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2}) : "—";
+    return Number.isFinite(v) ? "$" + v.toLocaleString(undefined, {minimumFractionDigits:5, maximumFractionDigits:5}) : "—";
   }
 
   function fmtPct(v, digits = 1) {
@@ -363,7 +363,7 @@ h1{font-size:20px;line-height:1.15;margin:3px 0 0;letter-spacing:-.02em}
       if (cached && Number.isFinite(cached.fetchedAt) && Date.now() - cached.fetchedAt < CACHE_MS && Array.isArray(cached.data)) {
         const candles = validateAndSort(cached.data);
         if (candles.length > 3000) {
-          setStatus("Loaded cached SOL history", candles.length.toLocaleString() + " validated 15-minute candles.", "ok");
+          setStatus("Loaded cached DOGE history", candles.length.toLocaleString() + " validated 15-minute candles.", "ok");
           return {candles, fetchedAt:cached.fetchedAt};
         }
       }
@@ -382,7 +382,7 @@ h1{font-size:20px;line-height:1.15;margin:3px 0 0;letter-spacing:-.02em}
     for (let i = 0; i < ranges.length; i++) {
       const [startSec, endSec] = ranges[i];
       setStatus(
-        "Downloading SOL history…",
+        "Downloading DOGE history…",
         (i + 1) + " / " + ranges.length + " chunks",
         "",
         i / ranges.length * 0.58
@@ -680,7 +680,7 @@ h1{font-size:20px;line-height:1.15;margin:3px 0 0;letter-spacing:-.02em}
           Number.isFinite(cachedModel.a) && Number.isFinite(cachedModel.b)) {
         state.model = cachedModel;
         renderDashboard(state.model);
-        setStatus("SOL model ready", "Using a recent locally cached calibration.", "ok");
+        setStatus("DOGE model ready", "Using a recent locally cached calibration.", "ok");
         return;
       }
 
@@ -691,16 +691,16 @@ h1{font-size:20px;line-height:1.15;margin:3px 0 0;letter-spacing:-.02em}
       setStatus("Calibrating probability model…", state.samples.length.toLocaleString() + " usable quarter-hour windows.", "", 0.74);
       await sleep(20);
 
-      setStatus("Calibrating expected movement…", "Building SOL score-specific median move estimates.", "", 0.84);
+      setStatus("Calibrating expected movement…", "Building DOGE score-specific median move estimates.", "", 0.84);
       await sleep(20);
 
       setStatus("Running out-of-sample verification…", "Freezing the first 70% model and testing the newest 30%.", "", 0.92);
       state.model = calibrate(state.samples, history.fetchedAt);
       renderDashboard(state.model);
 
-      setStatus("Complete", "SOL calibration and chronological verification are ready.", "ok", 1);
+      setStatus("Complete", "DOGE calibration and chronological verification are ready.", "ok", 1);
       await sleep(450);
-      setStatus("SOL model ready", state.model.total.toLocaleString() + " historical windows calibrated and verified.", "ok");
+      setStatus("DOGE model ready", state.model.total.toLocaleString() + " historical windows calibrated and verified.", "ok");
     } finally {
       state.isCalibrating = false;
       ui.recalibrateBtn.disabled = false;
@@ -799,7 +799,7 @@ h1{font-size:20px;line-height:1.15;margin:3px 0 0;letter-spacing:-.02em}
       return existing;
     }
 
-    setStatus("Creating locked forecast…", "Reading the official SOL-USD quarter-hour open and completed pre-window candles.");
+    setStatus("Creating locked forecast…", "Reading the official DOGE-USD quarter-hour open and completed pre-window candles.");
     const context = await fetchLiveContext(boundaryMs);
     const signal = liveScore(context.preceding);
     if (!signal) throw new Error("Unable to calculate a complete live signal.");
@@ -919,7 +919,7 @@ h1{font-size:20px;line-height:1.15;margin:3px 0 0;letter-spacing:-.02em}
       await refreshTicker();
     } catch (err) {
       console.error(err);
-      setStatus("SOL model could not initialize", err.message || "Unknown error. Use Re-run calibration to retry.", "error");
+      setStatus("DOGE model could not initialize", err.message || "Unknown error. Use Re-run calibration to retry.", "error");
     }
   }
 
